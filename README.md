@@ -19,3 +19,4 @@ This repository is based on a Text Translation model built on Transformers archi
         [-2.2290, -4.1239, -1.4516, -0.6692,  1.2785]], 
         grad_fn=<MulBackward0>)
       ```
+    - If you give input tensor with same number you would get embedings for the both same number with same vector embeddings that is why we go for positional encoding.
