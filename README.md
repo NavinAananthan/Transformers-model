@@ -6,6 +6,7 @@ This repository is based on a Text Translation model built on Transformers archi
    - Here we pass the input text sequence which is converted to word Ids by mapping it to the vocabulary.
    - Then we convert the word Ids to tensors then we pass it into Embeddings class.
    - Before that we should initialize the class by passig in two parameters Vocab_size the amount of text or input tensors we are going to give input and dim_embed the dimension of the output should we get.
+  
       ```
       embeddings = Embeddings(5,5)
       tensor = torch.tensor([1,2,3,4])
@@ -20,3 +21,8 @@ This repository is based on a Text Translation model built on Transformers archi
         grad_fn=<MulBackward0>)
       ```
     - If you give input tensor with same number you would get embedings for the both same number with same vector embeddings that is why we go for positional encoding.
+
+
+* Positional Encoding
+  - 
+  - 
