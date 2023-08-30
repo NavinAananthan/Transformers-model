@@ -3,17 +3,18 @@ import torch.nn as nn
 import math
 
 '''
-d_model: refers to the dimension of the model
+dim_embed: refers to the dimension of the model
 vocab_size: refers to the no. of words in the vocabulary
 '''
 
-class InputEmbeddings(nn.Module):
+class Embeddings(nn.Module):
 
-    def __init__(self, d_model: int, vocab_size: int):
+    def __init__(self, vocab_size: int, dim_embed: int) -> None:
         super().__init__()
-        self.d_model = d_model
-        self.vocab_size = vocab_size
-        self.embedding = nn.Embedding(vocab_size,d_model)
+        self.embedding = nn.Embedding(vocab_size,dim_embed)
+        self.sqrt_dim_embed = math.sqrt(dim_embed)
 
     def forward(self, x):
-        return self.embedding(x) * math.sqrt(self.d_model)
+        x = self.embedding(x.long())
+        x = x * self.sqrt_dim_embed
+        return x
