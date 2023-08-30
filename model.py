@@ -15,6 +15,14 @@ class Embeddings(nn.Module):
         self.sqrt_dim_embed = math.sqrt(dim_embed)
 
     def forward(self, x):
-        x = self.embedding(x.long())
+        x = self.embedding(x)
         x = x * self.sqrt_dim_embed
         return x
+    
+
+embeddings = Embeddings(5,5)
+
+tensor = torch.tensor([1,2,3,4])
+print(embeddings.forward(tensor))
+
+
