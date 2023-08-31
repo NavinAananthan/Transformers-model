@@ -57,4 +57,5 @@ This repository is based on a Text Translation model built on Transformers archi
 
 * Scaled Dot-Product Attention
   - 
+  - Here we pass intput of three tensors which are Key, Query and Value where all are the same embedding vector
   - 
