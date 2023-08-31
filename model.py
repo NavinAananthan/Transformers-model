@@ -42,9 +42,7 @@ class PositionalEncoding(nn.Module):
         pe[:, 1::2] = torch.cos(position * div_term)
         
         pe = pe.unsqueeze(0)
-        
         self.register_buffer('pe', pe)
-        
         self.dropout = nn.Dropout(p=drop_out)
 
     def forward(self, x: Tensor) -> Tensor:
@@ -52,16 +50,5 @@ class PositionalEncoding(nn.Module):
         x = x + self.pe[:, :max_sequence_length]
         x = self.dropout(x)
         return x
-
-
-
-embeddings = Embeddings(6,4)
-
-tensor = torch.tensor([1,1,4,4])
-vector = embeddings.forward(tensor)
-print(vector)
-
-positionalencoding = PositionalEncoding(10,4)
-print(positionalencoding.forward(vector))
 
 
