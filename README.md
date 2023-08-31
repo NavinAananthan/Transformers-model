@@ -55,6 +55,6 @@ This repository is based on a Text Translation model built on Transformers archi
          [ 0.1411, -0.9900,  0.0300,  0.9996]]])
       ```
 
-* Multi Head Attention
+* Scaled Dot-Product Attention
   - 
   - 
