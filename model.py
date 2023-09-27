@@ -61,9 +61,9 @@ class PositionalEncoding(nn.Module):
 
 '''
 This function is to calculate the attentions when we pass query, key and value
-query: Q
-key: K
-value: V
+query: Q Matrix
+key: K Matrix
+value: V Matrix
 mask: if we perform masked attention we need to specify if the mask is present or not
 '''
 def attention(query: Tensor, key: Tensor, value: Tensor, mask: Tensor=None) -> Tensor:
