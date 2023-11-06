@@ -4,6 +4,7 @@ import math
 from torch import Tensor
 import torch.nn.functional as F
 
+
 '''
 This function converts words into a corresponding input embeddings
 
